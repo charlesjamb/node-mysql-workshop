@@ -63,7 +63,7 @@ function requestJSON(url) {
 	);	
 }
 
-// stringify the sql quety
+// stringify the sql query
 function niceQuery(query) {
 	return (
 		connectionQuery(query)
