@@ -7,9 +7,22 @@ var query = `
 `;
 
 function getData() {
-	core.niceQuery(query)
+	core.connectionQuery(query)
 	.then(function(result) {
-		console.log(result);
+
+		var table = new Table ({
+			head: ['Tables in the databases'.bold.white]
+		});
+
+		var resultArray = [];
+		result.forEach(function(item) {
+			resultArray.push(item.Tables_in_addressbook);
+		})
+
+		table.push([resultArray.join('\n')]);
+
+		console.log(table.toString());
+
 	})
 	.catch(function(error) {
 		console.log(error);
