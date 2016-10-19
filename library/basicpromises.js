@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
   database : 'addressbook'
 });
 
-// connection query to sql
 function connectionQuery(thequery) {
 	connection.connect();
 	return new Promise(function(resolve, reject) {
